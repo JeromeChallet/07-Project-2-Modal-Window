@@ -38,3 +38,16 @@ for (let i = 0; i < btnsOpenModal.length; i++) {
 
 btnsCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+//will show u which key is pressed in the console log
+//for keyboard events we usually listen on the whole document
+//e stands for event
+document.addEventListener('keydown', function (e) {
+  console.log('a key was pressed');
+  console.log(e);
+
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    console.log('Esc was pressed');
+    closeModal();
+  }
+});
